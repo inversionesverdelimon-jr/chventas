@@ -52,7 +52,7 @@
     const btn = $("btnGenerar");
     btn.disabled = true;
     try {
-      const r = await fetch("api/datos", { cache: "no-store" });
+      const r = await fetch(window.CHVENTAS_DATOS || "api/datos", { cache: "no-store" });
       const j = await r.json();
       if (!r.ok || j.error) throw new Error(j.error || `Error ${r.status}`);
       estado.msCarga = Math.round(performance.now() - t0);
@@ -595,5 +595,6 @@
   }
 
   cargarDatos();
-  setInterval(sondear, SONDEO_MS);
+  // En modo estático (archivo de datos fijo) no hay servidor que sondear.
+  if (!window.CHVENTAS_DATOS) setInterval(sondear, SONDEO_MS);
 })();
