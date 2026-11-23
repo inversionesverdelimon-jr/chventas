@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CH Ventas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="contenedor">
+    <div id="error" class="error" hidden></div>
+    <div id="cargando" class="cargando">Conectando con la base de datos…</div>
+
+    <!-- Periodos fijos -->
+    <section class="grid-3" id="periodos"></section>
+
+    <!-- Controles -->
+    <section class="controles">
+      <div class="control">
+        <label>Años a comparar (elige de 1 a 4)</label>
+        <div class="chips" id="anios"></div>
+      </div>
+      <div class="control">
+        <label for="hastaMes">Hasta el mes</label>
+        <select id="hastaMes"></select>
+      </div>
+      <button id="btnGenerar" class="btn primario" title="Vuelve a leer el Excel y recalcula">Generar</button>
+      <button id="btnCsvMeses" class="btn">Copiar CSV</button>
+      <span class="actualizado" id="actualizado"></span>
+    </section>
+
+    <!-- KPIs -->
+    <section class="grid-4" id="kpis"></section>
+
+    <!-- Gráfica -->
+    <section class="panel">
+      <h2>Ventas netas por mes</h2>
+      <div class="leyenda" id="leyendaGrafica"></div>
+      <div class="grafica"><canvas id="grafica"></canvas></div>
+    </section>
+
+    <!-- Detalle mensual -->
+    <section class="panel">
+      <h2>Detalle mensual</h2>
+      <div class="tabla-scroll"><table class="tabla" id="tablaMeses"></table></div>
+      <p class="nota" id="notaMeses"></p>
+    </section>
+
+    <!-- Top clientes -->
+    <section class="panel">
+      <div class="panel-cab">
+        <h2>Top 20 ventas por cliente</h2>
+        <button id="btnCsvClientes" class="btn">Copiar CSV</button>
+      </div>
+      <div class="tabs" id="tabsClientes"></div>
+      <div class="grid-4 mini" id="statsClientes"></div>
+      <div class="leyenda" id="leyendaClientes"></div>
+      <div class="tabla-scroll"><table class="tabla" id="tablaClientes"></table></div>
+      <p class="nota" id="notaClientes"></p>
+    </section>
+
+    <footer class="fuente" id="fuente"></footer>
+  </main>
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="vendor/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

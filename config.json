@@ -1,0 +1,18 @@
+{
+  "ruta_excel": "C:\\Users\\contabilidad\\OneDrive - CI CHALA SAS\\Office Lens\\2026_Automatización app\\chala aux 4",
+  "hoja": null,
+  "columnas": {
+    "fecha": null,
+    "cuenta": null,
+    "cliente_id": null,
+    "cliente_nombre": null,
+    "debito": null,
+    "credito": null,
+    "valor": null,
+    "tipo": null,
+    "devolucion": null
+  },
+  "prefijos_ventas": ["41"],
+  "prefijos_devoluciones": ["4175"],
+  "puerto": 8050
+}
